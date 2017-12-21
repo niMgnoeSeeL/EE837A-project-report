@@ -1,0 +1,19 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Introduction
+\fixme{paraphrase}
+As the field of computer vision moves closer towards ar- tificial intelligence it becomes apparent that more flexible strategies are required to handle the large-scale and dynamic properties of real-world object categorization situations. At the very least, a visual object classification system should be able to incrementally learn about new classes, when train- ing data for them becomes available. We call this scenario class-incremental learning.
+
+Recently, icarl 이 나왔다. icarl은 어떤 방법 어떤 방법을 사용하여 이 문제를 핸들하는데에 성공하였다. 그러나 incremental learning이 exampler에 budget이 있는 데도 불구하고 icarl은 data representation에 대해 어떠한 process도 하지 않았기에 class의 수가 늘어날 수록 icarl에 의해서 represent 되는 exemplar의 power가 감소하는 효과를 보인다.
+
+따라서 우리는 CRIL을 제안하였다. CRIL은 VAE를 이용하여 incremental하게 representation을 learning 할때 compact하게 exemplar들을 모으도록 함께 러닝한다. 따라서 exempler의 숫자가 감소하더라도 mean of exempler가 class를 더욱 잘 represent 한다.
+
+우리는 MNIST 데이터셋으로 maximum exampler \todo{맞는 말 찾기} 를 줄여가며 icarl의 퍼포먼스가 얼마나 낮아지는지 확인하고 같은 환경헤서 CRIL을 실험하여 결과를 비교하였다. 또한 t-sne를 이용해서 CRIL로 learning 된 모델이 data를 feature 공간에 얼마나 compact하게 위치시키는지 visualization 해 보았다. The result shows ...
+
+이 project의 main contribution은 다음과 같다
+\begin{itemize}
+\item We introduced CRIL which successfully models compact representation of individuals on the feature space using VAE technique.
+\item By Comparing with iCarl with various size of exampler, we showed CRIL outperforms with the previous state-of-art technique.
+\item t-sne로 시각적으로 확인
+\end{itemize}

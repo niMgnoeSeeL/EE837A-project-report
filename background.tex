@@ -1,0 +1,53 @@
+
+\section{Background}
+\label{sec:background}
+
+\subsection{Class-incremental learning}
+\label{sec:cil}
+
+\fixme{paraphrase}
+As the field of computer vision moves closer towards ar- tificial intelligence it becomes apparent that more flexible strategies are required to handle the large-scale and dynamic properties of real-world object categorization situations. At the very least, a visual object classification system should be able to incrementally learn about new classes, when train- ing data for them becomes available. We call this scenario class-incremental learning.
+
+Formally, we demand the following three properties of an algorithm to qualify as class-incremental:
+\begin{enumerate}
+\item it should be trainable from a stream of data in which examples of different classes occur at different times,
+\item it should at any time provide a competitive multi-class classifier for the classes observed so far,
+\item its computational requirements and memory footprint should remain bounded, or at least grow very slowly, with respect to the number of classes seen so far.
+\end{enumerate}
+
+
+The first two criteria express the essence of class- incremental learning. The third criterion prevents trivial al- gorithms, such as storing all training examples and retrain- ing an ordinary multi-class classifier whenever new data be- comes available.
+
+\subsection{iCaRL: Incremental Classifier and Representation Learning}
+\label{sec:icarl}
+iCaRL
+
+\begin{algorithm}[ht]
+  \Input{$x$ \Comment*[f]{image to be classified}}  
+  \Require{$\mathcal{P} = \left(P_1, ..., P_t \right)$ \Comment*[f]{class exemplar sets}}
+  \Require{$\phi : \mathcal{X} \rightarrow \mathbb{R}^d$ \Comment*[f]{feature map}}
+  \For {$y = 1..t $}{
+    $\mu_y \leftarrow \frac{1}{\left| P_y \right|} \sum_{y \in P_y} \phi\left( p \right)$ \Comment*[f]{mean-of-exemplars}
+  }
+  $y^{*} \leftarrow \textrm{argmin}_{y = 1..t} \left| \phi(x) - \mu_y \right|$ \Comment*[f]{nearest prototype} \\
+  \Output{class label $y^{*}$}
+  
+\caption{ iCaRL \textsc{Classify} \label{alg:icarl_classify}}
+\end{algorithm}
+
+\begin{algorithm}[ht]
+  \Input{$X^s, ..., X^t$ \Comment*[f]{training examples in per-class sets}}  
+  \Input{$K$ \Comment*[f]{memory size}}  
+  \Require{$\Theta$ \Comment*[f]{current model parameters}}
+  \Require{$\mathcal{P} = \left(P_1, ..., P_{s-1} \right)$ \Comment*[f]{current exampler sets}}
+  $\Theta \leftarrow \textsc{UpdateRepresentation}\left(X^s, ..., X^t;\mathcal{P};\Theta\right)$ \\
+  $m \leftarrow K/t$ \Comment*[f]{number of exemplars per class} \\
+  \For {$y = 1..s-1$}{
+    $P_y \leftarrow \textsc{ReduceExemplarSet}\left(P_y,m\right)$ 
+  }
+  \For {$y = s..t$}{
+    $P_y \leftarrow \textsc{ConstructExemplarSet}\left(X_y,m,\Theta\right)$ 
+  }
+  $\mathcal{P} \leftarrow \left(P_1, ..., P_t\right)$ \Comment*[f]{new exemplar sets} \\
+\caption{ iCaRL \textsc{IncrementalTrain} \label{alg:icarl_learn}}
+\end{algorithm}
