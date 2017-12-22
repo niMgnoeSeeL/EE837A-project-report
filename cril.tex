@@ -4,11 +4,15 @@
 
 \subsection{Motivation}
 \label{sec:motivation}
-Motivation
+
 
 \subsection{VAE}
 \label{sec:vae}
 VAE
+
+1) 우리는 encoder만 feature extractor로 사용을 하는데, 여기서 feature가 각 이미지의 정보를 잘 가지고 있길 원한다.
+2) 그래서 단순히 neural network를 encoder로만 사용해서 supervised된 feature를 학습하는 방법보다는, 그 feature로 다시 이미지를 generation하는 모델에서 feature를 더 잘학습할 수 있을것 같다.
+3) 그럼 여기서 그냥 autoencoder나 VAE를 사용할 수 있는데, vae가 mnist에 대해서 image generation을 더 잘하니 feature를 더 잘 학습하는 걸로 여겨서 vae를 사용함
 
 \subsection{Algorithm} % OR Structure OR Architecture
 \label{sec:algorithm}
