@@ -5,8 +5,6 @@
 \subsection{Class-incremental learning}
 \label{sec:cil}
 
-As the goal of the computer vision field is getting closer to artificial intelligence, more flexible strategies are needed to handle the large-slace and dynamic properties of real-world situations. As part of this, the visual object classification system should be able to incrementally accept and train new classes. We call this scenario as class-incremental learning.
-
 \begin{figure}[h]
 \includegraphics[width=80mm]{data/class-incremental_learning.png}
 \centering
@@ -43,7 +41,7 @@ The first and second properties directly express the essence of class-incrementa
 \end{algorithm}
 
 
-iCaRL, an incremental classifier and representation learning, provides a practical strategy for simultaneous learning of classifiers and a feature representation in the class-incremental setting. Algorithm~\ref{alg:icarl_learn} shows the overall process of the training step of iCaRL.
+iCaRL~\cite{Rebuffi:2016aa}, an incremental classifier and representation learning, provides a practical strategy for simultaneous learning of classifiers and a feature representation in the class-incremental setting. Algorithm~\ref{alg:icarl_learn} shows the overall process of the training step of iCaRL.
 
 There are three main components on its strategy to fulfill the criteria of class-incremental learning. These three components are:
 
@@ -58,7 +56,7 @@ iCaRL learns classifiers and feature represeantation simulaneously from on a dat
 \subsubsection{Classification}
 \label{sec:icarl_classification}
 
-iCaRL relies on \textit{exemplar images} sets $P_1, ..., P_t$ that it select dynamically out of the data stream for each observed class so far. iCaRL ensures that the toal number fo exemplar images never exceeds a fixed parameter $K$.
+iCaRL relies on \textit{exemplar images} sets $P_1, ..., P_t$ that it select dynamically out of the data stream for each observed class so far. iCaRL ensures that the toal number fo exemplar images never exceeds a fixed parameter $K$. Therefore, the network's prediction rule is equivalent to the use of a linear classifier with non-linear feature map $phi$ and weight vectors $w_1, ..., w_t$.
 
 \begin{algorithm}[ht]
   \Input{$x$ \Comment*[f]{image to be classified}}  

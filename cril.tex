@@ -5,15 +5,28 @@
 \subsection{Motivation}
 \label{sec:motivation}
 
+An exampler set is a direct factor in labeling new data as it arrives. Reducing size of exampler set is inevitable because class is added within limited budget. Therefore, it is important to ensure that the quality of the exampler set is well preserved when performing class-incremental learning.
 
-\subsection{VAE}
-\label{sec:vae}
-VAE
+iCaRL uses naive linear classifier to train the network to generate the output feature vecors to be linearly separable. iCaRL uses a way to sort the exampler set and to remove the worst at the reduce step so that the average feature vector can be preserved as best as possible.
 
-1) 우리는 encoder만 feature extractor로 사용을 하는데, 여기서 feature가 각 이미지의 정보를 잘 가지고 있길 원한다.
-2) 그래서 단순히 neural network를 encoder로만 사용해서 supervised된 feature를 학습하는 방법보다는, 그 feature로 다시 이미지를 generation하는 모델에서 feature를 더 잘학습할 수 있을것 같다.
-3) 그럼 여기서 그냥 autoencoder나 VAE를 사용할 수 있는데, vae가 mnist에 대해서 image generation을 더 잘하니 feature를 더 잘 학습하는 걸로 여겨서 vae를 사용함
+\begin{figure}[h]
+\includegraphics[width=80mm]{data/compact_motivation.png}
+\centering
+\caption{Change of the average feature representation. As the exampler size being reduced, the average feature representation may change its position with huge difference. \label{fig:compact_motivation}}
+\end{figure}
+Although the average feature vector of the initial examplers of one class may reflect the entire class well, as the size of the exampler set reduces, it can happen that the remaining examplers do not reflect the features of the class.
+
+\subsection{CRIL}
+To solve aforementioned issue, we presents compact representation for incremental learning, CRIL, using variational auto encoder, VAE, for representation learning. 
+
+\begin{figure}[h]
+\includegraphics[width=80mm]{data/compact_representation.png}
+\centering
+\caption{The feature representation learning strategy for each of iCaRL and CRIL. iCaRL uses naive linear classification while CRIL applies VAE. \label{fig:compact_representation}}
+\end{figure}
+
+The main idea of CRIL operates on the representation learning step. Rather than using naive linear classifier on the training to generate the output feature vectors to be linearly separable, CRIL applies variational auto encoder(VAE)~\cite{Kingma:2013aa} so that the network is trained to generate the output feature vectors following the distinctive gaussian distribution for each of the observed class. Deliberately pulling the output feature vectors between each class with a small amount of the gaussian distribution will prevent the decline of the classification competence of reduced exampler set.
 
 \subsection{Algorithm} % OR Structure OR Architecture
 \label{sec:algorithm}
-Algorithm
+\todo{YOUNGKI PLEASE HELP}
