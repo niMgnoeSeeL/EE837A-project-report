@@ -1,20 +1,26 @@
 \section{Experimantal Setup}
 \label{sec:setup}
 
-\subsection{Research Questions}
+\subsection{Research Question}
 \label{sec:rq}
 
-\subsubsection{RQ1: }
-\label{sec:rq1}
-RQ1
+The main objective of CRIL is maintaining the competence from the reduction of the size of the exampler set. Therefore, we setup the first research question as follows:
 
-\subsubsection{RQ2: }
-\label{sec:rq2}
-RQ2
+\begin{framed}
+\textsc{RQ1}: How effective is CRIL as the exampler size per each class changes?
+\label{rq1}
+\end{framed}
 
-\subsubsection{RQ3: }
-\label{sec:rq3}
-RQ3
+There are two factor that affect on the exampler size per class. One is the budget: the size of the exampler can be store for all class. If the budget is fixed, the other is the number of observed classes during the incremental learning.
+
+Another interesting parameter that can affect on the training of feature representation is the distance between the mean of the gaussian distribution each class follows. We can train the model to place the feature vector in different distance between data from different classes, and this may change the accuracy of the model. Thus, we set the second research question as follows:
+
+\begin{framed}
+\textsc{RQ2}: How does the effectiveness of CRIL changes as the distance between the mean of the gaussian distirbution differs?
+\label{rq2}
+\end{framed}
+
+We've run the experiment with various budget and record the accuracy change as the number of observed classes increases. The result has been compared betwwen CRIL with different mean value of gaussian distribution and iCaRL, the existing state of the art strategy.
 
 \subsection{Subject and Environment}
 \label{sec:subject}
@@ -22,7 +28,7 @@ RQ3
 
 Subject
 Env
-MNIST
+MNIST, CIFAR-100
 
 \subsection{Configuration}
 \label{sec:configuration}
