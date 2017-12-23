@@ -5,16 +5,16 @@
 \subsection{Motivation}
 \label{sec:motivation}
 
-An exampler set is a direct factor in labeling new data as it arrives. Reducing size of exampler set is inevitable because class is added within limited budget. Therefore, it is important to ensure that the quality of the exampler set is well preserved when performing Class-Incremental Learning.
+An exemplar set is a direct factor in labeling new data as it arrives. Reducing size of exemplar set is inevitable because class is added within limited budget. Therefore, it is important to ensure that the quality of the exemplar set is well preserved when performing Class-Incremental Learning.
 
-iCaRL uses naive linear classifier to train the network to generate the output feature vecors to be linearly separable. iCaRL uses a way to sort the exampler set and to remove the worst at the reduce step so that the average feature vector can be preserved as best as possible.
+iCaRL uses naive linear classifier to train the network to generate the output feature vecors to be linearly separable. iCaRL uses a way to sort the exemplar set and to remove the worst at the reduce step so that the average feature vector can be preserved as best as possible.
 
 \begin{figure}[h]
 \includegraphics[width=80mm]{data/compact_motivation.png}
 \centering
-\caption{Change of the average feature representation. As the exampler size being reduced, the average feature representation may change its position with huge difference. \label{fig:compact_motivation}}
+\caption{Change of the average feature representation. As the exemplar size being reduced, the average feature representation may change its position with huge difference. \label{fig:compact_motivation}}
 \end{figure}
-Although the average feature vector of the initial examplers of one class may reflect the entire class well, as the size of the exampler set reduces, it can happen that the remaining examplers do not reflect the features of the class.
+Although the average feature vector of the initial exemplars of one class may reflect the entire class well, as the size of the exemplar set reduces, it can happen that the remaining exemplars do not reflect the features of the class.
 
 \subsection{CRIL}
 
@@ -26,7 +26,7 @@ Although the average feature vector of the initial examplers of one class may re
 
 To solve aforementioned issue, we presents compact representation for incremental learning, CRIL.
 
-The main idea of CRIL operates on the representation learning step. Rather than using naive linear classifier on the training to generate the output feature vectors to be linearly separable, CRIL applies variational auto encoder(VAE)~\cite{Kingma:2013aa} so that the network is trained to generate the output feature vectors following the distinctive gaussian distribution for each of the observed class. Deliberately pulling the output feature vectors between each class with a small amount of the gaussian distribution will prevent the decline of the classification competence of reduced exampler set.
+The main idea of CRIL operates on the representation learning step. Rather than using naive linear classifier on the training to generate the output feature vectors to be linearly separable, CRIL applies variational auto encoder(VAE)~\cite{Kingma:2013aa} so that the network is trained to generate the output feature vectors following the distinctive gaussian distribution for each of the observed class. Deliberately pulling the output feature vectors between each class with a small amount of the gaussian distribution will prevent the decline of the classification competence of reduced exemplar set.
 
 The essential component for CRIL is the encoder that is going to be used as a feature extractor. Rather than use a simple network as a supervised feature extractor, we claim that the autoencoder which trains both the feature extracting model and the data generating model is more suitable method.
 
