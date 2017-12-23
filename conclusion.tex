@@ -1,3 +1,12 @@
 \section{Conclusion}
 \label{sec:conclusion}
-Conclusion
+
+We presents CRIL, compact representation for incremental learning, which is a brand new strategy for class-incremental learning. With VAE, the network is trained to have the output features that follow the gaussian distribution with given mean and variance for each class. The network is expected to generate the output feature vectors which are more compact within each class and distinctive between classes.
+
+The experiment was held to compare the effectiveness between current state-of-the-art class-incremental learning strategy, iCaRL. The results shows that CRIL outperformed over 21\% in average accuracy to iCaRL for all sizes of exemplar on MNIST dataset. Especilaly for smail size of exemplar($K=100$), CRIL shows 75\% of test accuracy for 10 classes with the budget size($K$) 100 which was 23\% higher than iCaRL(52\%).
+
+However, while both iCaRL and CRIL had poor performances(lower than 21\% of accuracy on average), iCaRL outperformed about 10\% in average accuracy to CRIL. We disscuss that adding the convolustional layer on CRIL may increase the performance.
+
+\todo{t-sne}
+
+\todo{YOUNGKI PLEASE HELP}

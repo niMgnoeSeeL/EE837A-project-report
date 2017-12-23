@@ -49,7 +49,7 @@ Seongmin Lee
 YoungKi Hong
 \affil{School of Computing}}
 
-\input{abstract}
+% \input{abstract}
 
 \maketitle
 
@@ -59,7 +59,29 @@ YoungKi Hong
 \input{setup}
 \input{result}
 \input{conclusion}
+\input{contribution}
 
+\clearpage
+\begin{figure}[hbtp]
+\includegraphics[width=120mm]{data/figures/MNIST_K-100.png}
+\centering
+\includegraphics[width=120mm]{data/figures/MNIST_K-500.png}
+\centering
+\includegraphics[width=120mm]{data/figures/MNIST_K-1000.png}
+\centering
+\caption{Plot of accuracy from MNIST dataset for iCaRL and CRIL with the difference of mean of gaussian distribution with 1 and 5. We evaluate the budget($K$) 100, 500, and 1000. \label{fig:mnist}}
+\end{figure}
+
+\clearpage
+\begin{figure}[hbtp]
+\includegraphics[width=120mm]{data/figures/CIFAR-100_K-100.png}
+\centering
+\includegraphics[width=120mm]{data/figures/CIFAR-100_K-1000.png}
+\centering
+\caption{Plot of accuracy from CIFAR-100 dataset for iCaRL and CRIL with the difference of mean of gaussian distribution with 5. We evaluate the budget($K$) 100 and 1000. \label{fig:cifar}}
+\end{figure}
+
+\clearpage
 \bibliographystyle{acm}
 \bibliography{papers}
 

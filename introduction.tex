@@ -5,20 +5,19 @@ Introduction
 
 As the goal of the computer vision field is getting closer to artificial intelligence, more flexible strategies are needed to handle the large-slace and dynamic properties of real-world situations. As part of this, the visual object classification system should be able to incrementally accept and train new classes. We call this scenario as class-incremental learning~\cite{Rebuffi:2016aa}.
 
-iCaRL is a state of the art strategy that allows learning in such a class-incremental way. It handles the crux by 1) sampling representative data with \textit{prioritized exemplar selection} algorithm and 2) classifying by a \textit{nearest-mean-of-exemplars} rule.
+iCaRL is a state-of-the-art strategy that allows learning in such a class-incremental way. It handles the crux by 1) sampling representative data with \textit{prioritized exemplar selection} algorithm and 2) classifying by a \textit{nearest-mean-of-exemplars} rule.
 
 Despite the class-incremental learning has a limitation on a budget to store the exampler set, iCaRL has no algorithmic strategy to learn effective feature representation, therefore the capability of the exampler set to represent the class weaken as the the number of observed class increases.
 
-In this paper, we propose CRIL, a compact representation on incremental learning. CRIL uses the VAE to train the feature extractor model so that data per class can be compactly represented on the feature space. This representation learning strategy will prevent the decline of the classification competence of reduced exampler set.
+In this paper, we propose CRIL, a compact representation on incremental learning. CRIL uses the VAE to train the feature extractor model so that data per class can be compactly represented on the feature space.
 
-\todo{update here as we finalize the experiments}
+We've run the experiment with various settings and record the accuracy change. The result has been compared between CRIL and iCaRL, the existing state-of-the-art strategy, on the MNIST and CIFAR-100 dataset.
 
-
-우리는 MNIST 데이터셋으로 maximum exampler 를 줄여가며 icarl의 퍼포먼스가 얼마나 낮아지는지 확인하고 같은 환경헤서 CRIL을 실험하여 결과를 비교하였다. 또한 t-sne를 이용해서 CRIL로 learning 된 모델이 data를 feature 공간에 얼마나 compact하게 위치시키는지 visualization 해 보았다. The result shows ...
+The results shows that CRIL outperformed over 21\% in average accuracy to iCaRL for all sizes of exemplar on MNIST dataset. Especilaly for smail size of exemplar($K=100$), CRIL shows 75\% of test accuracy for 10 classes with the budget size($K$) 100 which was 23\% higher than iCaRL (52\%). However, while both iCaRL and CRIL had poor performances(lower than 21\% of accuracy on average), iCaRL outperformed about 10\% in average accuracy to CRIL.
 
 The main contribution of this paper is follows:
 \begin{itemize}
 \item We introduced CRIL which successfully models compact representation of individuals on the feature space using VAE technique.
 \item By Comparing with iCarl with various size of exampler, CRIL showed competitive performance in class-incremental learning, which outperformed iCaRL on MNIST dataset.
-\item \todo{t-sne로 시각적으로 확인}
+\item \todo{t-sne YOUNGKI}
 \end{itemize}
