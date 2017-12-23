@@ -1,0 +1,85 @@
+iCaRL classes: 2 
+Train Accuracy: 46 % 
+-- Detailed accuracy info --
+[label: 0] num of images: 5923.0, accuracy: 0.9907
+[label: 1] num of images: 6742.0, accuracy: 0.0000
+Test Accuracy: 45 %
+-- Detailed accuracy info --
+[label: 0] num of images: 980.0, accuracy: 0.9857
+[label: 1] num of images: 1135.0, accuracy: 0.0000
+iCaRL classes: 4 
+Train Accuracy: 58 % 
+-- Detailed accuracy info --
+[label: 0] num of images: 500.0, accuracy: 1.0000
+[label: 1] num of images: 500.0, accuracy: 0.0060
+[label: 2] num of images: 5958.0, accuracy: 0.5611
+[label: 3] num of images: 6131.0, accuracy: 0.6191
+Test Accuracy: 79 %
+-- Detailed accuracy info --
+[label: 0] num of images: 980.0, accuracy: 0.9459
+[label: 1] num of images: 1135.0, accuracy: 0.9956
+[label: 2] num of images: 1032.0, accuracy: 0.5640
+[label: 3] num of images: 1010.0, accuracy: 0.6693
+iCaRL classes: 6 
+Train Accuracy: 84 % 
+-- Detailed accuracy info --
+[label: 0] num of images: 250.0, accuracy: 0.9920
+[label: 1] num of images: 250.0, accuracy: 1.0000
+[label: 2] num of images: 250.0, accuracy: 0.6120
+[label: 3] num of images: 250.0, accuracy: 0.2560
+[label: 4] num of images: 5842.0, accuracy: 0.8326
+[label: 5] num of images: 5421.0, accuracy: 0.8873
+Test Accuracy: 78 %
+-- Detailed accuracy info --
+[label: 0] num of images: 980.0, accuracy: 0.9551
+[label: 1] num of images: 1135.0, accuracy: 0.9912
+[label: 2] num of images: 1032.0, accuracy: 0.4603
+[label: 3] num of images: 1010.0, accuracy: 0.4168
+[label: 4] num of images: 982.0, accuracy: 0.9358
+[label: 5] num of images: 892.0, accuracy: 0.9585
+iCaRL classes: 8 
+Train Accuracy: 75 % 
+-- Detailed accuracy info --
+[label: 0] num of images: 166.0, accuracy: 0.9880
+[label: 1] num of images: 166.0, accuracy: 1.0000
+[label: 2] num of images: 166.0, accuracy: 0.6627
+[label: 3] num of images: 166.0, accuracy: 0.2048
+[label: 4] num of images: 166.0, accuracy: 0.8373
+[label: 5] num of images: 166.0, accuracy: 0.0000
+[label: 6] num of images: 5918.0, accuracy: 0.7001
+[label: 7] num of images: 6265.0, accuracy: 0.8255
+Test Accuracy: 74 %
+-- Detailed accuracy info --
+[label: 0] num of images: 980.0, accuracy: 0.9245
+[label: 1] num of images: 1135.0, accuracy: 0.9885
+[label: 2] num of images: 1032.0, accuracy: 0.7403
+[label: 3] num of images: 1010.0, accuracy: 0.3079
+[label: 4] num of images: 982.0, accuracy: 0.6578
+[label: 5] num of images: 892.0, accuracy: 0.6424
+[label: 6] num of images: 958.0, accuracy: 0.7714
+[label: 7] num of images: 1028.0, accuracy: 0.8619
+iCaRL classes: 10 
+Train Accuracy: 40 % 
+-- Detailed accuracy info --
+[label: 0] num of images: 125.0, accuracy: 1.0000
+[label: 1] num of images: 125.0, accuracy: 1.0000
+[label: 2] num of images: 125.0, accuracy: 0.3360
+[label: 3] num of images: 125.0, accuracy: 0.3600
+[label: 4] num of images: 125.0, accuracy: 0.6720
+[label: 5] num of images: 125.0, accuracy: 0.2720
+[label: 6] num of images: 125.0, accuracy: 0.6240
+[label: 7] num of images: 125.0, accuracy: 0.8720
+[label: 8] num of images: 5851.0, accuracy: 0.2839
+[label: 9] num of images: 5949.0, accuracy: 0.4744
+Test Accuracy: 60 %
+-- Detailed accuracy info --
+[label: 0] num of images: 980.0, accuracy: 0.9439
+[label: 1] num of images: 1135.0, accuracy: 0.9982
+[label: 2] num of images: 1032.0, accuracy: 0.3469
+[label: 3] num of images: 1010.0, accuracy: 0.7822
+[label: 4] num of images: 982.0, accuracy: 0.5611
+[label: 5] num of images: 892.0, accuracy: 0.3240
+[label: 6] num of images: 958.0, accuracy: 0.4050
+[label: 7] num of images: 1028.0, accuracy: 0.6926
+[label: 8] num of images: 974.0, accuracy: 0.3676
+[label: 9] num of images: 1009.0, accuracy: 0.4995
