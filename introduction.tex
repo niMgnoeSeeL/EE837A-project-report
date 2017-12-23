@@ -1,23 +1,21 @@
 \section{Introduction}
 \label{sec:introduction}
 
-Introduction
+As the goal of the computer vision field is getting closer to artificial intelligence, more flexible strategies are needed to handle the large-scale and dynamic properties of real-world situations. As part of this, the visual object classification system should be able to incrementally accept and train new classes. We call this scenario as Class-Incremental Learning~\cite{Rebuffi:2016aa}.
 
-As the goal of the computer vision field is getting closer to artificial intelligence, more flexible strategies are needed to handle the large-slace and dynamic properties of real-world situations. As part of this, the visual object classification system should be able to incrementally accept and train new classes. We call this scenario as class-incremental learning~\cite{Rebuffi:2016aa}.
+iCaRL is a state-of-the-art strategy that allows learning in such a class-incremental way. It handles the crux by 1) sampling representative data with \textit{prioritized exampler selection} algorithm and 2) classifying by a \textit{nearest-mean-of-examplers} rule.
 
-iCaRL is a state-of-the-art strategy that allows learning in such a class-incremental way. It handles the crux by 1) sampling representative data with \textit{prioritized exemplar selection} algorithm and 2) classifying by a \textit{nearest-mean-of-exemplars} rule.
-
-Despite the class-incremental learning has a limitation on a budget to store the exampler set, iCaRL has no algorithmic strategy to learn effective feature representation, therefore the capability of the exampler set to represent the class weaken as the the number of observed class increases.
+Despite the Class-Incremental Learning has a limitation on a budget to store the exampler set, iCaRL has no algorithmic strategy to learn effective feature representation, therefore the capability of the exampler set to represent the class weaken as the number of observed class increases.
 
 In this paper, we propose CRIL, a compact representation on incremental learning. CRIL uses the VAE to train the feature extractor model so that data per class can be compactly represented on the feature space.
 
-We've run the experiment with various settings and record the accuracy change. The result has been compared between CRIL and iCaRL, the existing state-of-the-art strategy, on the MNIST and CIFAR-100 dataset.
+We have run the experiment with various settings and record the accuracy change. The result has been compared between CRIL and iCaRL, the existing state-of-the-art strategy, on the MNIST and CIFAR-100 dataset.
 
-The results shows that CRIL outperformed over 21\% in average accuracy to iCaRL for all sizes of exemplar on MNIST dataset. Especilaly for smail size of exemplar($K=100$), CRIL shows 75\% of test accuracy for 10 classes with the budget size($K$) 100 which was 23\% higher than iCaRL (52\%). However, while both iCaRL and CRIL had poor performances(lower than 21\% of accuracy on average), iCaRL outperformed about 10\% in average accuracy to CRIL.
+The results shows that CRIL outperformed over 21\% in average accuracy to iCaRL for all sizes of exampler on MNIST dataset. Especilaly for smail size of exampler($K=100$), CRIL shows 75\% of test accuracy for 10 classes with the budget size($K$) 100 which was 23\% higher than iCaRL (52\%). However, while both iCaRL and CRIL had poor performances(lower than 21\% of accuracy on average), iCaRL outperformed about 10\% in average accuracy to CRIL.
 
-The main contribution of this paper is follows:
+The main contribution of this paper is following:
 \begin{itemize}
 \item We introduced CRIL which successfully models compact representation of individuals on the feature space using VAE technique.
-\item By Comparing with iCarl with various size of exampler, CRIL showed competitive performance in class-incremental learning, which outperformed iCaRL on MNIST dataset.
+\item By Comparing with iCarl with various size of exampler, CRIL showed competitive performance in Class-Incremental Learning, which outperformed iCaRL on MNIST dataset.
 \item \todo{t-sne YOUNGKI}
 \end{itemize}
