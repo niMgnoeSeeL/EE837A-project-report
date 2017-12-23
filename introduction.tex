@@ -2,19 +2,23 @@
 \label{sec:introduction}
 
 Introduction
-\fixme{paraphrase}
 
 As the goal of the computer vision field is getting closer to artificial intelligence, more flexible strategies are needed to handle the large-slace and dynamic properties of real-world situations. As part of this, the visual object classification system should be able to incrementally accept and train new classes. We call this scenario as class-incremental learning~\cite{Rebuffi:2016aa}.
 
-Recently, icarl 이 나왔다. icarl은 어떤 방법 어떤 방법을 사용하여 이 문제를 핸들하는데에 성공하였다. 그러나 incremental learning이 exampler에 budget이 있는 데도 불구하고 icarl은 data representation에 대해 어떠한 process도 하지 않았기에 class의 수가 늘어날 수록 icarl에 의해서 represent 되는 exemplar의 power가 감소하는 효과를 보인다.
+iCaRL is a state of the art strategy that allows learning in such a class-incremental way. It handles the crux by 1) sampling representative data with \textit{prioritized exemplar selection} algorithm and 2) classifying by a \textit{nearest-mean-of-exemplars} rule.
 
-따라서 우리는 CRIL을 제안하였다. CRIL은 VAE를 이용하여 incremental하게 representation을 learning 할때 compact하게 exemplar들을 모으도록 함께 러닝한다. 따라서 exempler의 숫자가 감소하더라도 mean of exempler가 class를 더욱 잘 represent 한다.
+Despite the class-incremental learning has a limitation on a budget to store the exampler set, iCaRL has no algorithmic strategy to learn effective feature representation, therefore the capability of the exampler set to represent the class weaken as the the number of observed class increases.
 
-우리는 MNIST 데이터셋으로 maximum exampler \todo{맞는 말 찾기} 를 줄여가며 icarl의 퍼포먼스가 얼마나 낮아지는지 확인하고 같은 환경헤서 CRIL을 실험하여 결과를 비교하였다. 또한 t-sne를 이용해서 CRIL로 learning 된 모델이 data를 feature 공간에 얼마나 compact하게 위치시키는지 visualization 해 보았다. The result shows ...
+In this paper, we propose CRIL, a compact representation on incremental learning. CRIL uses the VAE to train the feature extractor model so that data per class can be compactly represented on the feature space. This representation learning strategy will prevent the decline of the classification competence of reduced exampler set.
 
-이 project의 main contribution은 다음과 같다
+\todo{update here as we finalize the experiments}
+
+
+우리는 MNIST 데이터셋으로 maximum exampler 를 줄여가며 icarl의 퍼포먼스가 얼마나 낮아지는지 확인하고 같은 환경헤서 CRIL을 실험하여 결과를 비교하였다. 또한 t-sne를 이용해서 CRIL로 learning 된 모델이 data를 feature 공간에 얼마나 compact하게 위치시키는지 visualization 해 보았다. The result shows ...
+
+The main contribution of this paper is follows:
 \begin{itemize}
 \item We introduced CRIL which successfully models compact representation of individuals on the feature space using VAE technique.
 \item By Comparing with iCarl with various size of exampler, we showed CRIL outperforms with the previous state-of-art technique.
-\item t-sne로 시각적으로 확인
+\item \todo{t-sne로 시각적으로 확인}
 \end{itemize}
